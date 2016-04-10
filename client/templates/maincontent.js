@@ -67,6 +67,7 @@ Template.maincontent.events({
     // Insert a task into the collection
     Tasks.insert({
       task: Session.get('search'),
+      url : null
     });
   },
 
@@ -115,6 +116,30 @@ Template.maincontent.events({
 		alert(tag + " is already a tag for this task");
 	}
   },
+
+  /* Set a URL */
+   'submit #url-and-task': function(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+	// Get value from tasks-dropdown, {{task}}
+    const task = document.getElementById('task-dropdown-for-url').value;
+    console.log(task);
+
+    const target = document.getElementById('theUrlText').value;
+    console.log(target);
+
+    const entry = Tasks.find({"task" : task }).fetch();
+    const id = entry[0]._id;
+
+	/*Tasks.update(id, {
+		url : target,
+	}); */
+
+	// Clear form
+    // target.text.value = '';
+    }
+
 });
 
 

@@ -11,7 +11,7 @@
                             <input type="text" class="form-control"  placeholder="Search" >
                             <span class="input-group-addon">
                                 <button id="add-task" type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="glyphicon glyphicon glyphicon-plus"></span>
                                 </button>  
                             </span>
                         </div>
@@ -33,27 +33,34 @@
 
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar Menu</a>
 
-                    <br /><br />
-
-                    <!-- Button to add a task within maincontent-modal.html -->
-                    <!-- <a href="#" id="add" class="btn btn-primary">Create a task</a> -->     
+                    <br /><br />   
        
                     <!-- Associate tags and tasks -->
-                  
-                        <select id="task-dropdown">
+                    <select id="task-dropdown">
+                        {{#each tasks}}
+                            <option value="{{task}}">{{task}}</option>
+                        {{/each}}
+                    </select>
+
+                    <select id="tag-dropdown">
+                        {{#each tags}}
+                            <option value="{{tag}}">{{tag}}</option>
+                        {{/each}}
+                    </select>
+                    <input type="submit" class="testButton" value="Associate task and tag">
+
+                    <br /><br />
+
+                    <form id="url-and-task">
+                        <!-- Set URL for tasks -->
+                        <select id="task-dropdown-for-url">
                             {{#each tasks}}
                                 <option value="{{task}}">{{task}}</option>
                             {{/each}}
-                       </select>
-
-                       <select id="tag-dropdown">
-                            {{#each tags}}
-                                <option value="{{tag}}">{{tag}}</option>
-                            {{/each}}
-                       </select>
-
-                      <br><br>
-                      <input type="submit" class="testButton">
+                        </select>
+                        <input class="urlText" id="theUrlText" placeholder="Enter URL"> <!-- txt -->
+                        <input type="submit" class="urlSubmit" value="Set URL of task"> <!-- button -->
+                    </form>
 
                 </div>
             </div>
