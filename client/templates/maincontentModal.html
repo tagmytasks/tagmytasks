@@ -1,0 +1,51 @@
+<template name="maincontentModal">
+  <div class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+        <!-- Start Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add a task</h4>
+        </div>
+
+        <!-- Start Modal Body -->
+        <div class="modal-body">
+
+          <!-- TASK -->
+          <div class="form-group">
+              <label for="task">Task Name:</label>
+              <input type="text" class="form-control" id="taskName">
+          </div>
+
+          <!-- URL -->
+          <div class="form-group">
+              <label for="url">URL:</label>
+              <input type="text" class="form-control" id="url">
+          </div>
+
+          <!-- Create a new tag and associate with task-->
+          <div class="form-group">
+              <label for="newtag">Tag Name(s) to Associate with Task:</label>
+              <input type="text" class="form-control" id="associatetagwithtask">
+          </div>
+          
+          <!-- Tags to associate -->
+          <div class="checkbox">
+              <label><input type="checkbox" value="">Tag 1</label>
+          </div>
+
+          <div class="checkbox">
+              <label><input type="checkbox" value="">Tag 2</label>
+          </div>
+        </div>
+
+        <!-- Start modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save">Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

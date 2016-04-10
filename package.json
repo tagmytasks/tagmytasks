@@ -1,5 +1,5 @@
 {
-  "name": "simple-todos",
+  "name": "tagmytasks",
   "private": true,
   "scripts": {
     "start": "meteor run"

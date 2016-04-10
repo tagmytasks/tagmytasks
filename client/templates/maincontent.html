@@ -10,152 +10,58 @@
                         <div class="input-group stylish-input-group">
                             <input type="text" class="form-control"  placeholder="Search" >
                             <span class="input-group-addon">
-                                <button type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
+                                <button id="add-task" type="submit">
+                                    <span class="glyphicon glyphicon glyphicon-plus"></span>
                                 </button>  
                             </span>
                         </div>
                     </div> 
 
                     <!-- Code for tasks goes here -->
+                    {{#each tasks}}
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <!-- FOR EACH ELEMENT -->
-                            <div class="pull-left taskbox">TASK</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-
+                              <div class="pull-left taskbox">{{task}}</div>
+                              {{#each badges}}
+                              <div class="pull-right tagbox">{{this}}</div>
+                              {{/each}}
                             <!-- END FOR EACH ELEMENT -->
                         </div>
                     </div>
-
-                    <!-- Code for tasks goes here -->
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <!-- FOR EACH ELEMENT -->
-                            <div class="pull-left taskbox">TASK</div>
-                            
-                            <!-- CHECKBOX
-                            <div class="pull-right btn-group" data-toggle="buttons">
-                                <label class="btn btn-default">
-                                    <input type="checkbox" autocomplete="off">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </label>
-                            </div>
-                            -->
-
-                            <!-- End checkbox -->
-
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            
-
-                            <!-- END FOR EACH ELEMENT -->
-                        </div>
-                    </div>
+                    {{/each}}
 
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar Menu</a>
 
+                    <br /><br />   
+       
+                    <!-- Associate tags and tasks -->
+                    <select id="task-dropdown">
+                        {{#each tasks}}
+                            <option value="{{task}}">{{task}}</option>
+                        {{/each}}
+                    </select>
+
+                    <select id="tag-dropdown">
+                        {{#each tags}}
+                            <option value="{{tag}}">{{tag}}</option>
+                        {{/each}}
+                    </select>
+                    <input type="submit" class="testButton" value="Associate task and tag">
+
                     <br /><br />
 
-                    <!-- Trigger the modal with a button -->
-                    <!-- http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
-                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#taskmodal">Create a task</button>
+                    <form id="url-and-task">
+                        <!-- Set URL for tasks -->
+                        <select id="task-dropdown-for-url">
+                            {{#each tasks}}
+                                <option value="{{task}}">{{task}}</option>
+                            {{/each}}
+                        </select>
+                        <input class="urlText" id="theUrlText" placeholder="Enter URL"> <!-- txt -->
+                        <input type="submit" class="urlSubmit" value="Set URL of task"> <!-- button -->
+                    </form>
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="taskmodal" role="dialog">
-                    <div class="modal-dialog">
-                    
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Create a task</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <!-- TASK -->
-                            <div class="form-group">
-                                <label for="task">Task Name:</label>
-                                <input type="text" class="form-control" id="task">
-                            </div>
-
-                            <!-- URL -->
-                            <div class="form-group">
-                                <label for="url">URL:</label>
-                                <input type="text" class="form-control" id="url">
-                            </div>
-
-                            <!-- Create a new tag and associate with task-->
-                            <div class="form-group">
-                                <label for="newtag">Tag Name(s) to Associate with Task:</label>
-                                <input type="text" class="form-control" id="associatetagwithtask">
-                            </div>
-                            
-                            <!-- Tags to associate -->
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="">Tag 1</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="">Tag 2</label>
-                            </div>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Create Task</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- End modal for popup div-->
-
-
-
-                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tagmodal">Create a tag</button>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="tagmodal" role="dialog">
-                    <div class="modal-dialog">
-                    
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Create a tag</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <!-- TASK -->
-                            <div class="form-group">
-                                <label for="task">Tag Name:</label>
-                                <input type="text" class="form-control" id="tag">
-                            </div>
-
-                            <!-- Create a new tag and associate with task-->
-                            <div class="form-group">
-                                <label for="newtag">Tag Name(s) to Associate with Task:</label>
-                                <input type="text" class="form-control" id="associatetaskwithtag">
-                            </div>
-                            
-                            <!-- Tasks to associate -->
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="">Task 1</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="">Task 2</label>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Create Tag</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- End modal for popup div-->
-                  
                 </div>
             </div>
         </div>

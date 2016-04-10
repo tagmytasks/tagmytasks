@@ -11,8 +11,8 @@
                 <div class="input-group stylish-input-group">
                     <input type="text" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
+                        <button id="add-tag" type="submit">
+                            <span class="glyphicon glyphicon glyphicon-plus"></span>
                         </button>  
                     </span>
                 </div>
@@ -21,16 +21,10 @@
             </li>
 
             <!-- List of tags -->
-            <li>
-                <a href="#">Tag 1</a>
-            </li>
-            <li>
-                <a href="#">Tag 2</a>
-            </li>
-            <li>
-                <a href="#">Tag 3</a>
-            </li>
-            <!-- Create the tag button here 
+              {{#each tags}}
+                <li><a href="#">{{tag}}</a></li>
+              {{/each}}
+           <!-- Create the tag button here 
             <li>
                 Create a tag option here! 
             </li>
