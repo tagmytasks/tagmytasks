@@ -23,7 +23,7 @@
                         <div class="panel-body">
                             <!-- FOR EACH ELEMENT -->
                               <div class="pull-left taskbox">{{task}}</div>
-                              {{#each tags}}
+                              {{#each badges}}
                               <div class="pull-right tagbox">{{this}}</div>
                               {{/each}}
                             <!-- END FOR EACH ELEMENT -->
@@ -56,7 +56,7 @@
 
                        <select name="tags-dropdown">
                             {{#each tags}}
-                                <option value="{{label}}">{{label}}</option>
+                                <option value="{{tag}}">{{tag}}</option>
                             {{/each}}
                        </select>
 

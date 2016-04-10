@@ -88,7 +88,7 @@ Template.maincontent.events({
  
     // Insert a task into the collection
     Tags.insert({
-      label:text
+      badge:text
     });
  
     // Clear form
@@ -109,7 +109,7 @@ Template.maincontent.events({
  
     // Logic for associating the task and tag 
     Tags.insert({
-      label:text
+      tag:text
     });
  
     // Clear form

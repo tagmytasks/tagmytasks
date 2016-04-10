@@ -8,7 +8,7 @@ Template.sidebar.helpers({
 
     // if there is something in the search bar, search for it!
     if (search !== null)
-      return Tags.find({label:new RegExp(search)});
+      return Tags.find({tag:new RegExp(search)});
     // else return everything in the collection
     else
       return Tags.find({});
@@ -42,7 +42,7 @@ Template.sidebar.events({
     // if tag does not already exist, add it
     if (c.length === 0)
       Tags.insert({
-        label: tagToAdd,
+        tag: tagToAdd,
       });
     // else it does exist, warn the user
     else
