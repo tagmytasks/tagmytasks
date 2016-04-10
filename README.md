@@ -44,5 +44,10 @@ In order to work on the app at its current state you need:
 4. run the command `meteor`
 5. The project will be hosted on `localhost:3000` by default
 
+## Adding items to the database
+`db.collectionname.insert({'fieldname':'value'})
+`db.tasks.insert({'name':'taskname'})
+`db.tags.insert({'name':'tagname'})
+
 ## Workflow
 We are using waffle.io to manage this project using simple KANBAN styled boards. If you would like to join the board, simply go to the link [here](https://waffle.io/tagmytasks/tagmytasks).
