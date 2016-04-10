@@ -3,13 +3,6 @@
 ## Description
 This web application helps to sort, search, and filter through tasks using a system of tags that are associated with those tasks.
 
-## Inspiration
-My idea stems from a problem that I’m currently facing. I have a lot of learning resources to keep track of. For example: Udemy, Coursera, Udacity, Codecademy, Khan Academy, Digital and Physical books, the list goes on. So I want to build something to have these learning objectives all in one place.
-
-## Use Cases
-I want to learn about a specific course titled “Advanced Data Structures in Java”. So I would assign this task the tags “Data Structures” and “Java” to this task. Say that the course is hosted on Udemy. So then I would assign the tag “Udemy”.
-And I can go on and on, forming these tags organically as I need them. Then I'll be able to look through my tasks and tags, easily sorting, filtering, and searching through them as desired. This doesn’t only apply to developers, it really can apply to anyone trying to learn something new and having a difficult time managing all of their resources for learning.
-
 ## Core Implementation in 24 Hours
 - Create a task
 - Create a tag
@@ -35,12 +28,10 @@ And I can go on and on, forming these tags organically as I need them. Then I'll
 
 ## Technologies
 - Meteorjs
-- Blaze
 - MongoDB
 - HTML5
-- CSS
 - Bootstrap
-
+- 
 ## Packages
 - session
 - reactive-dict
