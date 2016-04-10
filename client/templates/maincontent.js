@@ -23,6 +23,10 @@ Template.maincontent.helpers({
     else
       return Tasks.find({});
   },
+
+  tags() {
+      return Tags.find({});
+  },
 });
 
 /*
@@ -73,7 +77,7 @@ Template.maincontent.events({
     target.text.value = '';
   },
 
-  /* Submission of a task in the text field */
+  /* Submission of a tag in the text field */
    'submit .new-tag': function(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -83,6 +87,27 @@ Template.maincontent.events({
     const text = target.text.value;
  
     // Insert a task into the collection
+    Tags.insert({
+      label:text
+    });
+ 
+    // Clear form
+    target.text.value = '';
+  },
+
+
+  /* Associate tag and tasks */
+   'submit .associate-task-and-tag': function(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+    // Get value from task option
+    const target = event.target;
+    const text = target.text.value;
+
+    // Get value from tag option
+ 
+    // Logic for associating the task and tag 
     Tags.insert({
       label:text
     });

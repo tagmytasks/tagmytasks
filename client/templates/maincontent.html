@@ -42,10 +42,30 @@
                      <form class="new-task">
                         <input type="text" name="text" placeholder="Type to add new tasks" />
                     </form> 
-                    
+
                      <form class="new-tag">
                         <input type="text" name="text" placeholder="Type to add new tags" />
                     </form>            
+
+                    <form class="associate-task-and-tag">
+                        <select name="tasks-dropdown">
+                            {{#each tasks}}
+                                <option value="{{task}}">{{task}}</option>
+                            {{/each}}
+                       </select>
+
+                       <select name="tags-dropdown">
+                            {{#each tags}}
+                                <option value="{{label}}">{{label}}</option>
+                            {{/each}}
+                       </select>
+
+                      <br><br>
+                      <input type="submit">
+                    </form>
+
+
+
                 </div>
             </div>
         </div>
