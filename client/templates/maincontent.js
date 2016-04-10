@@ -129,15 +129,16 @@ Template.maincontent.events({
     const target = document.getElementById('theUrlText').value;
     console.log(target);
 
-    const entry = Tasks.find({"task" : task }).fetch();
+    const entry = Tasks.find({task : task }).fetch();
     const id = entry[0]._id;
 
-	/*Tasks.update(id, {
+	Tasks.update(id, {
+        task: task,
 		url : target,
-	}); */
+	});
 
 	// Clear form
-    // target.text.value = '';
+     //target.text.value = '';
     }
 
 });
