@@ -29,13 +29,15 @@ Template.maincontent.helpers({
   Events for dynamic app control.
 */
 Template.maincontent.events({
+  /* This is the code I tried with Modals, still wont work. Keeping for now. 
   'click #add': function(e) {
     e.preventDefault();
 
     jQuery.noConflict();
 
     Modal.show('maincontentModal');
-  },
+  }, */
+
 
   /*
     Search functionality. Searches as you type.
@@ -50,5 +52,27 @@ Template.maincontent.events({
     // else set the session variable to null so we can see all the tasks
     else
       Session.set('search', null);
-  }
+  },
+
+  /* Submission of a task in the text field */
+   'submit .new-task': function(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+    // Get value from form element
+    const target = event.target;
+    const text = target.text.value;
+
+    console.log(text);
+ 
+    // Insert a task into the collection
+    Tasks.insert({
+      task:text
+    });
+ 
+    // Clear form
+    target.text.value = '';
+  },
 });
+
+
