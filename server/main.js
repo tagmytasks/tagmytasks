@@ -1,1 +1,1 @@
-import '../libs/db/collections.js';
+import '../imports/db/collections.js';
