@@ -21,16 +21,10 @@
             </li>
 
             <!-- List of tags -->
-            <li>
-                <a href="#">Tag 1</a>
-            </li>
-            <li>
-                <a href="#">Tag 2</a>
-            </li>
-            <li>
-                <a href="#">Tag 3</a>
-            </li>
-            <!-- Create the tag button here 
+              {{#each tags}}
+                <li><a href="#">{{label}}</a></li>
+              {{/each}}
+           <!-- Create the tag button here 
             <li>
                 Create a tag option here! 
             </li>
