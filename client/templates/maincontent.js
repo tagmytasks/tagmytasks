@@ -82,7 +82,7 @@ Template.maincontent.events({
     // Prevent default browser form submit
     event.preventDefault();
  
-    // Get value from form element
+    // Get value from text aera element
     const target = event.target;
     const text = target.text.value;
  
@@ -97,23 +97,30 @@ Template.maincontent.events({
 
 
   /* Associate tag and tasks */
-   'submit .associate-task-and-tag': function(event) {
+   'click .testButton': function(event) {
     // Prevent default browser form submit
     event.preventDefault();
  
-    // Get value from task option
-    const target = event.target;
-    const text = target.text.value;
+	// Get value from tasks-dropdown, {{task}}
+    const tag = document.getElementById('tag-dropdown').value;
+    console.log(tag);
+    const task = document.getElementById('task-dropdown').value;
+    console.log(task);
 
-    // Get value from tag option
- 
-    // Logic for associating the task and tag 
-    Tags.insert({
-      tag:text
-    });
- 
-    // Clear form
-    target.text.value = '';
+    const entry = Tasks.find({"task" : task }).fetch();
+    const id = entry[0]._id;
+
+    const c = Tasks.find({ task : task , badges: { $all : [ tag ] } } ).fetch();
+
+    if(c.length === 0) {
+    	Tasks.update(id, {
+    		$push: { badges : tag },
+    	});
+	}
+
+	else {
+		alert(tag + " is already a tag for this task");
+	}
   },
 });
 

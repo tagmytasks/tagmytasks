@@ -47,22 +47,23 @@
                         <input type="text" name="text" placeholder="Type to add new tags" />
                     </form>            
 
-                    <form class="associate-task-and-tag">
-                        <select name="tasks-dropdown">
+                    <!-- Associate tags and tasks -->
+                  
+                        <select id="task-dropdown">
                             {{#each tasks}}
                                 <option value="{{task}}">{{task}}</option>
                             {{/each}}
                        </select>
 
-                       <select name="tags-dropdown">
+                       <select id="tag-dropdown">
                             {{#each tags}}
                                 <option value="{{tag}}">{{tag}}</option>
                             {{/each}}
                        </select>
 
                       <br><br>
-                      <input type="submit">
-                    </form>
+                      <input type="submit" class="testButton">
+                   
 
 
 
