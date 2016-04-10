@@ -23,7 +23,9 @@
                         <div class="panel-body">
                             <!-- FOR EACH ELEMENT -->
                               <div class="pull-left taskbox">{{task}}</div>
-                              <div class="pull-right tagbox">{{tags}}</div>
+                              {{#each tags}}
+                              <div class="pull-right tagbox">{{this}}</div>
+                              {{/each}}
                             <!-- END FOR EACH ELEMENT -->
                         </div>
                     </div>
