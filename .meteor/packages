@@ -19,8 +19,5 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-<<<<<<< HEAD
 peppelg:bootstrap-3-modal
-=======
 session
->>>>>>> 240ad9bc523975bbc30d21a873e270ff21a1f364
