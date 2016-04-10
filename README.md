@@ -31,6 +31,10 @@ This web application helps to sort, search, and filter through tasks using a sys
 - MongoDB
 - HTML5
 - Bootstrap
+- 
+## Packages
+- session
+- reactive-dict
 
 ## Requirements
 In order to work on the app at its current state you need:
