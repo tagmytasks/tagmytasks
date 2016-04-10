@@ -18,7 +18,7 @@ Template.maincontent.helpers({
 
     // if there is something in the search bar, search for it!
     if (search !== null)
-      return Tasks.find({task:search});
+      return Tasks.find({task:new RegExp(search)});
     // else return everything in the collection
     else
       return Tasks.find({});
