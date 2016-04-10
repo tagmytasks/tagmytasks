@@ -49,6 +49,7 @@ mongo-id@1.0.3
 npm-mongo@1.4.42
 observe-sequence@1.0.10
 ordered-dict@1.0.6
+peppelg:bootstrap-3-modal@1.0.4
 promise@0.6.6
 random@1.0.8
 reactive-var@1.0.8
