@@ -21,35 +21,12 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <!-- FOR EACH ELEMENT -->
-                            <div class="pull-left taskbox">TASK</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-
-                            <!-- END FOR EACH ELEMENT -->
-                        </div>
-                    </div>
-
-                    <!-- Code for tasks goes here -->
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <!-- FOR EACH ELEMENT -->
-                            <div class="pull-left taskbox">TASK</div>
-                            
-                            <!-- CHECKBOX
-                            <div class="pull-right btn-group" data-toggle="buttons">
-                                <label class="btn btn-default">
-                                    <input type="checkbox" autocomplete="off">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </label>
-                            </div>
-                            -->
-
-                            <!-- End checkbox -->
-
-                            <div class="pull-right tagbox">TAG</div>
-                            <div class="pull-right tagbox">TAG</div>
-                            
+                            {{#each tasks}}
+                              <div class="pull-left taskbox">{{name}}</div>
+                              {{#each tags}}
+                                <div class="pull-right tagbox">{{label}}</div>
+                              {{/each}}
+                            {{/each}}
 
                             <!-- END FOR EACH ELEMENT -->
                         </div>
