@@ -29,5 +29,23 @@ Template.sidebar.events({
     // else set the session variable to null so we can see all the tags
     else
       Session.set('tag-search', null);
+  },
+
+  /*
+    Add a tag to the collection.
+  */
+  'click #add-tag': function(e) {
+    e.preventDefault();
+    var tagToAdd = Session.get('tag-search');
+    var c = Tags.find({label:tagToAdd}).fetch();
+
+    // if tag does not already exist, add it
+    if (c.length === 0)
+      Tags.insert({
+        label: tagToAdd,
+      });
+    // else it does exist, warn the user
+    else
+      alert(tagToAdd + " already exists!");
   }
 });
