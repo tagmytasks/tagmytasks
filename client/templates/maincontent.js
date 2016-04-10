@@ -56,18 +56,35 @@ Template.maincontent.events({
 
   /* Submission of a task in the text field */
    'submit .new-task': function(event) {
+
     // Prevent default browser form submit
     event.preventDefault();
  
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
-
-    console.log(text);
  
     // Insert a task into the collection
     Tasks.insert({
-      task:text
+      task:text,
+    });
+ 
+    // Clear form
+    target.text.value = '';
+  },
+
+  /* Submission of a task in the text field */
+   'submit .new-tag': function(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+    // Get value from form element
+    const target = event.target;
+    const text = target.text.value;
+ 
+    // Insert a task into the collection
+    Tags.insert({
+      label:text
     });
  
     // Clear form
