@@ -10,7 +10,7 @@
                         <div class="input-group stylish-input-group">
                             <input type="text" class="form-control"  placeholder="Search" >
                             <span class="input-group-addon">
-                                <button type="submit">
+                                <button id="add-task" type="submit">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </button>  
                             </span>
@@ -37,16 +37,7 @@
 
                     <!-- Button to add a task within maincontent-modal.html -->
                     <!-- <a href="#" id="add" class="btn btn-primary">Create a task</a> -->     
-
-                    <!-- Attempt to create the form on the page -->
-                     <form class="new-task">
-                        <input type="text" name="text" placeholder="Type to add new tasks" />
-                    </form> 
-
-                     <form class="new-tag">
-                        <input type="text" name="text" placeholder="Type to add new tags" />
-                    </form>            
-
+       
                     <!-- Associate tags and tasks -->
                   
                         <select id="task-dropdown">
@@ -63,9 +54,6 @@
 
                       <br><br>
                       <input type="submit" class="testButton">
-                   
-
-
 
                 </div>
             </div>
