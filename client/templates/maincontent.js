@@ -132,10 +132,10 @@ Template.maincontent.events({
     const entry = Tasks.find({task : task }).fetch();
     const id = entry[0]._id;
 
-	Tasks.update(id, {
+	/*Tasks.update(id, {
         task: task,
 		url : target,
-	});
+	}); */
 
 	// Clear form
      //target.text.value = '';
