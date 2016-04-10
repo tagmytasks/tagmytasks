@@ -10,7 +10,4 @@ Template.maincontent.helpers({
     tasks() {
         return Tasks.find({});
     },
-    tags() {
-        return Tags.find({});
-    },
 });

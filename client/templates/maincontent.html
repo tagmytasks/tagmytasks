@@ -18,19 +18,16 @@
                     </div> 
 
                     <!-- Code for tasks goes here -->
+                    {{#each tasks}}
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <!-- FOR EACH ELEMENT -->
-                            {{#each tasks}}
                               <div class="pull-left taskbox">{{name}}</div>
-                              {{#each tags}}
-                                <div class="pull-right tagbox">{{label}}</div>
-                              {{/each}}
-                            {{/each}}
-
+                              <div class="pull-right tagbox">{{tags}}</div>
                             <!-- END FOR EACH ELEMENT -->
                         </div>
                     </div>
+                    {{/each}}
 
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar Menu</a>
 
