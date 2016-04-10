@@ -1,13 +1,161 @@
 <!-- Page Content -->
 <template name="maincontent">
     <div id="page-content-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid"> <!-- add the background here! -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Simple Sidebar</h1>
-                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+                    <!-- Search bar -->
+                    <div id="maincontent_container"> 
+                        <div class="input-group stylish-input-group">
+                            <input type="text" class="form-control"  placeholder="Search" >
+                            <span class="input-group-addon">
+                                <button type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>  
+                            </span>
+                        </div>
+                    </div> 
+
+                    <!-- Code for tasks goes here -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- FOR EACH ELEMENT -->
+                            <div class="pull-left taskbox">TASK</div>
+                            <div class="pull-right tagbox">TAG</div>
+                            <div class="pull-right tagbox">TAG</div>
+                            <div class="pull-right tagbox">TAG</div>
+
+                            <!-- END FOR EACH ELEMENT -->
+                        </div>
+                    </div>
+
+                    <!-- Code for tasks goes here -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- FOR EACH ELEMENT -->
+                            <div class="pull-left taskbox">TASK</div>
+                            
+                            <!-- CHECKBOX
+                            <div class="pull-right btn-group" data-toggle="buttons">
+                                <label class="btn btn-default">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </label>
+                            </div>
+                            -->
+
+                            <!-- End checkbox -->
+
+                            <div class="pull-right tagbox">TAG</div>
+                            <div class="pull-right tagbox">TAG</div>
+                            
+
+                            <!-- END FOR EACH ELEMENT -->
+                        </div>
+                    </div>
+
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar Menu</a>
+
+                    <br /><br />
+
+                    <!-- Trigger the modal with a button -->
+                    <!-- http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#taskmodal">Create a task</button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="taskmodal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Create a task</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- TASK -->
+                            <div class="form-group">
+                                <label for="task">Task Name:</label>
+                                <input type="text" class="form-control" id="task">
+                            </div>
+
+                            <!-- URL -->
+                            <div class="form-group">
+                                <label for="url">URL:</label>
+                                <input type="text" class="form-control" id="url">
+                            </div>
+
+                            <!-- Create a new tag and associate with task-->
+                            <div class="form-group">
+                                <label for="newtag">Tag Name(s) to Associate with Task:</label>
+                                <input type="text" class="form-control" id="associatetagwithtask">
+                            </div>
+                            
+                            <!-- Tags to associate -->
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Tag 1</label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Tag 2</label>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Create Task</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- End modal for popup div-->
+
+
+
+                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tagmodal">Create a tag</button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="tagmodal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Create a tag</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <!-- TASK -->
+                            <div class="form-group">
+                                <label for="task">Tag Name:</label>
+                                <input type="text" class="form-control" id="tag">
+                            </div>
+
+                            <!-- Create a new tag and associate with task-->
+                            <div class="form-group">
+                                <label for="newtag">Tag Name(s) to Associate with Task:</label>
+                                <input type="text" class="form-control" id="associatetaskwithtag">
+                            </div>
+                            
+                            <!-- Tasks to associate -->
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Task 1</label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Task 2</label>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Create Tag</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- End modal for popup div-->
+                  
                 </div>
             </div>
         </div>
@@ -20,6 +168,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-    
+
 </template>
         <!-- /#page-content-wrapper -->
